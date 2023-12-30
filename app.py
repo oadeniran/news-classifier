@@ -2,10 +2,6 @@ import streamlit as st
 import numpy as np
 from helpers.helpers import process_req, load_vectorizer, load_model
 
-vectorizer = load_vectorizer("helpers/vectorizer.pk")
-model = load_model("model/model.h5")
-
-
 st.markdown(
     """
     <style>
@@ -32,6 +28,9 @@ subject = st.radio(
     ["***News***", "***Politics***", "***Government News***", "***World News***", "***US-News***", "***Left-News***", "***Middle-East***"],
     index = None,
     captions = ["General news on mundane topics", "News on Politics and state affairs", "News pertaining to the government of a country", "News pertaining to other countries outside the US", "News that borders happenings in the US", "News on left wings of the US", "News on matters in the Middle East region"])
+
+vectorizer = load_vectorizer("helpers/vectorizer.pk")
+model = load_model("model/model.h5")
 
 def get_preds(text, subject):
     if subject != None and not len(text) < 3:
