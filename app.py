@@ -24,7 +24,7 @@ st.markdown(
 
 st.title('News classifier')
 
-text = st.text_area("Please paste the news content here", height = 200)
+text = st.text_area("Please paste the news content here", height = 150)
 
 
 subject = st.radio(
