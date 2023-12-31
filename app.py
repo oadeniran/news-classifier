@@ -51,6 +51,7 @@ st.button("Inference", type="primary", on_click=get_preds, args=[text, subject])
 if st.button('Clear'):
     st.write('')
 
+st.subheader("Scroll up to see inference")
 
 
 
