@@ -20,6 +20,8 @@ st.markdown(
 
 st.title('News classifier')
 
+st.subheader("Please note that the subject of the news plays a major role in classification. You can try more than one subject to which the news belongs")
+
 text = st.text_area("Please paste the news content here", height = 150)
 
 
@@ -40,9 +42,9 @@ def get_preds(text, subject):
 
         prediction = model.predict(request)
         prediction = np.round(prediction).reshape(1, -1)
-        ind = prediction[0]
-        ind = int(ind)
-        stat = ["Fake", "Real"][ind]
+        ind_f = prediction[0]
+        ind = int(ind_f[0])
+        stat = ["Fake", "Real"][ind] + f" with a probability of being {ind_f[0]} Real"
         st.subheader(stat, divider="rainbow")
 
 st.button("Inference", type="primary", on_click=get_preds, args=[text, subject])
