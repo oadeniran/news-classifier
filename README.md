@@ -13,5 +13,6 @@ Deployment was done with streamlit and can be accessed via - https://fake-news-c
 
 ## Notes
 
-As is the case with most ML projects, the data goes a long way in determining how effectie the model is
-Hopefully more data can be gotten to inmprove the model's generalization
+As is the case with most ML projects, the data goes a long way in determining how effectie the model is.
+
+Hopefully more data can be gotten to improve the model's generalization
